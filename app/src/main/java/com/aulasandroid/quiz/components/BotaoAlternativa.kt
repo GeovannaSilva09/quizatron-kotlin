@@ -12,9 +12,9 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 
 @Composable
-fun BotaoAlternativa(text: String) {
+fun BotaoAlternativa(text: String, onClick: () -> Unit) {
     OutlinedButton(
-        onClick = {},
+        onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
         colors = ButtonDefaults.buttonColors(
             contentColor = Color.Black,

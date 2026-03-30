@@ -12,8 +12,6 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.OutlinedCard
 import androidx.compose.material3.Text
@@ -26,11 +24,12 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import com.aulasandroid.quiz.R
 import com.aulasandroid.quiz.components.BotaoRestart
 
 @Composable
-fun FinalScreen (modifier: Modifier = Modifier) {
+fun FinalScreen ( navController: NavHostController) {
     Box(
         modifier = Modifier.fillMaxSize()
             .padding(top = 50.dp)
@@ -86,7 +85,7 @@ fun FinalScreen (modifier: Modifier = Modifier) {
                 )
             }
 
-            BotaoRestart(text = "JOGAR NOVAMENTE")
+            BotaoRestart(text = "JOGAR NOVAMENTE", onClick = {navController.navigate(route = "perguntas")})
 
         }
     }

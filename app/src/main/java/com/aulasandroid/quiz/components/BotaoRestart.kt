@@ -12,7 +12,7 @@ import androidx.compose.ui.unit.dp
 import com.aulasandroid.quiz.R
 
 @Composable
-fun BotaoRestart(text: String) {
+fun BotaoRestart(text: String, onClick: () -> Unit) {
     Button(
         modifier = Modifier,
         border = BorderStroke(1.dp, Color.Black),
@@ -20,7 +20,7 @@ fun BotaoRestart(text: String) {
             containerColor = colorResource(R.color.cor_botoes),
             contentColor = Color.Black
         ),
-        onClick = {}
+        onClick = onClick
     ) {
         Text(
             text = text

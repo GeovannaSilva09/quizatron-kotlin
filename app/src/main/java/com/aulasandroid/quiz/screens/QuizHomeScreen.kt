@@ -1,6 +1,5 @@
 package com.aulasandroid.quiz.screens
 
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -8,25 +7,23 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.aulasandroid.quiz.R
+import androidx.navigation.NavHostController
 import com.aulasandroid.quiz.R.color.cor_tela_inicial
 import com.aulasandroid.quiz.components.BotaoStart
 import com.aulasandroid.quiz.components.LogoQuiz
 
 
 @Composable
-fun QuizHomeScreen(modifier: Modifier = Modifier) {
+fun QuizHomeScreen( navController: NavHostController) {
 
     Box(
         modifier = Modifier.fillMaxSize()
@@ -53,7 +50,9 @@ fun QuizHomeScreen(modifier: Modifier = Modifier) {
                 color = Color.Black
             )
 
-            BotaoStart(onClick = {},  text = "COMEÇAR")
+            BotaoStart(onClick = {
+                navController.navigate(route = "perguntas")
+            },  text = "COMEÇAR")
         }
     }
 }
