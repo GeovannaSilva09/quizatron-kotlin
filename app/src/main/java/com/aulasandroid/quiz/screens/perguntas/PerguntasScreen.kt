@@ -20,6 +20,7 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.livedata.observeAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -38,7 +39,8 @@ import com.aulasandroid.quiz.components.LogoQuiz
 @Composable
 fun  PerguntasScreen ( navController: NavHostController, perguntasScreenViewModel: PerguntasScreenViewModel) {
 
-    val uiState by perguntasScreenViewModel.perguntasUiState.collectAsState()
+    val acertos by perguntasScreenViewModel.acertos.observeAsState(0)
+    val alternativaSelecionada by perguntasScreenViewModel.alternativaSelecionada.observeAsState("")
 
     var numeroPergunta = 1;
 
